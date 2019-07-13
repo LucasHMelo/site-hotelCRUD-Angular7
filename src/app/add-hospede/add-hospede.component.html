@@ -1,0 +1,126 @@
+<div style="padding: 100px">
+
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="gst_addForm" novalidate>
+
+      <div class="form-group">
+        <label class="col-md-4">Name</label>
+        <input type="text" class="form-control" formControlName="name" #name />
+      </div>
+
+      <div *ngIf="gst_addForm.controls['name'].invalid && (gst_addForm.controls['name'].dirty || gst_addForm.controls['name'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="gst_addForm.controls['name'].errors.required">
+          Please Enter the name
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Email </label>
+        <input type="text" class="form-control" formControlName="email" #email />
+      </div>
+
+      <div *ngIf="gst_addForm.controls['email'].invalid && (gst_addForm.controls['email'].dirty || gst_addForm.controls['email'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="gst_addForm.controls['email'].errors.required">
+          Please enter the email
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Password </label>
+        <input type="text" class="form-control" formControlName="password" minlength="8"
+          #password />
+      </div>
+
+      <div *ngIf="gst_addForm.controls['password'].invalid && (gst_addForm.controls['password'].dirty || gst_addForm.controls['password'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="gst_addForm.controls['password'].errors.required">
+          Please enter password
+        </div>
+        <div *ngIf="gst_addForm.controls['password'].errors.minlength">
+          please provide password
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-4">CEP </label>
+        <input type="text" class="form-control" formControlName="cep" #cep />
+      </div>
+
+      <div *ngIf="gst_addForm.controls['cep'].invalid && (gst_addForm.controls['cep'].dirty || gst_addForm.controls['cep'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="gst_addForm.controls['cep'].errors.required">
+          Please enter the cep
+        </div>
+        <div *ngIf="gst_addForm.controls['cep'].errors.minlength">
+          Please provide cep
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Endereco </label>
+        <input type="text" class="form-control" formControlName="endereco" #endereco />
+      </div>
+
+      <div *ngIf="gst_addForm.controls['endereco'].invalid && (gst_addForm.controls['endereco'].dirty || gst_addForm.controls['endereco'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="gst_addForm.controls['endereco'].errors.required">
+          Please enter the endereco
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Bairro </label>
+        <input type="text" class="form-control" formControlName="bairro" #bairro />
+      </div>
+
+      <div *ngIf="gst_addForm.controls['bairro'].invalid && (gst_addForm.controls['bairro'].dirty || gst_addForm.controls['bairro'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="gst_addForm.controls['bairro'].errors.required">
+          Please enter bairro
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Cidade </label>
+        <input type="text" class="form-control" formControlName="cidade" #cidade />
+      </div>
+
+      <div *ngIf="gst_addForm.controls['cidade'].invalid && (gst_addForm.controls['cidade'].dirty || gst_addForm.controls['cidade'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="gst_addForm.controls['cidade'].errors.required">
+          Please enter cidade
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Estado </label>
+        <input type="text" class="form-control" formControlName="estado" #estado />
+      </div>
+
+      <div *ngIf="gst_addForm.controls['estado'].invalid && (gst_addForm.controls['estado'].dirty || gst_addForm.controls['estado'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="gst_addForm.controls['estado'].errors.required">
+          Please enter cidade
+        </div>
+      </div>
+
+      
+      
+
+      <div class="form-group">
+        <button class="btn btn-primary" (click)="addHospedes(name.value, email.value,password.value,cep.value, email.value, bairro.value, cidade.value, estado.value)"
+         [disabled]="!gst_addForm.valid || gst_addForm.pristine">Add Hospede</button>
+         <a class="btn btn-secondary" style="margin-left: 10px" [routerLink]="['/admin']"> See data</a>
+
+         <!-- password.value, cep.value, email.value, bairro.value, cidade.value, estado.value -->
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+
+<p  *ngIf="dataadded" class="alert alert-success">{{ msg }}</p>

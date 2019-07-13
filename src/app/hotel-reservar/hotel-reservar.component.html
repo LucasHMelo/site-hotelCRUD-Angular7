@@ -1,0 +1,99 @@
+<div class="jumbotron text-center" style="margin-bottom: 0px">
+  <h1 class="display-4 "> <img src="https://image.flaticon.com/icons/png/512/110/110479.png" width="64" height="64">HOTEL SKYLINE</h1>
+  <p class="lead">O melhor e o maior hotel do mundo. Venha conhecer esse luxuoso lugar e único paraíso na terra. Veja o mundo do topo.</p>
+  <hr class="my-4">  
+</div>
+
+<!-- INICIO DO FORMULARIO -->
+
+<div class="jumbotron" style="margin: 0px">
+<form #hotelForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit(hotelForm.value)" novalidate>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required #email="ngModel" [class.is-invalid]="email.invalid" [class.is-valid]="email.touched" name="email" [(ngModel)]="hotelModel.email">
+      <small class="text-danger" [class.d-none]="email.valid || email.touched">Campo obrigatório</small>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Senha</label>
+      <input type="password" class="form-control" #password="ngModel" id="inputPassword4" placeholder="Senha" name="password" [(ngModel)]="hotelModel.password">
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-8">
+    <label for="inputName">Nome</label>
+    <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid" [class.is-valid]="name.touched" class="form-control" name="name" [(ngModel)]="hotelModel.name">
+    <!-- <input type="text" required #name="ngModel" class="form-control" id="inputNome" placeholder="João Maria"> -->
+    <small class="text-danger" [class.d-none]="name.valid || name.touched">Campo obrigatório</small>
+  </div>
+  </div>
+      <div class="form-row">
+  <div class="form-group">
+    <label for="CEP">CEP</label>
+    <input type="text" id="cep" class="form-control" #cep="ngModel" placeholder="38000-000" name="cep" [(ngModel)]="hotelModel.cep">
+    <button class="btn btn-primary" type="button" (click)="searchCep(cep.value)">Buscar</button>
+  </div>
+      </div>
+  <div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="inputAddress2">Endereço</label>
+    <input type="text" class="form-control" id="inputAddress" #endereco="ngModel" placeholder="Ex: Rua dos Bobo" name="endereco" [(ngModel)]="hospede.logradouro">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputBairro">Bairro</label>
+    <input type="text" class="form-control"  id="inputBairro" #bairro="ngModel" placeholder="Ex: Bairro dos bananas" name="bairro" [(ngModel)]="hospede.bairro">
+  </div>
+</div>
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <label for="inputCity">Cidade</label>
+      <input type="text" class="form-control" id="inputCity" #cidade="ngModel" placeholder="Ex: Bananalandia" name="cidade" [(ngModel)]="hospede.localidade">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputEstado">Estado</label>
+      <select id="inputEstado" class="form-control" form-control="estado" #estado="ngModel" name="estado" [(ngModel)]="hospede.uf">
+        <option selected>Escolher...</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+        
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Aceito os termos de compromisso.
+      </label>
+    </div>
+  </div>
+  <button [disabled]="hotelForm.form.invalid" class="btn btn-primary" type="submit">Submit form</button>
+</form>
+
+<p  *ngIf="dataadded" class="alert alert-success">{{ msg }}</p>
+</div>

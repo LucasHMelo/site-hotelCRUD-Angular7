@@ -1,0 +1,56 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="rounded-pill bg-white"> 
+  <a class="navbar-brand  text-dark" href="#"  >
+    <img src="https://image.flaticon.com/icons/png/512/110/110479.png" width="30" height="30" alt="">
+    SKYLINE
+  </a></div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" class="nav-link" routerLink="/inicio" routerLinkActive="active">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/sobre" routerLinkActive="active">Sobre</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" class="nav-link" routerLink="/acomodacao">
+          Acomodações
+        </a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/reservar" routerLinkActive="active">Reservar</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" routerLink="/contato" routerLinkActive="active">Contato</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0 rounded-pill" type="submit">Pesquisar</button>
+    </form>
+  </div>
+</nav>     
+<router-outlet></router-outlet>
+
+<footer> 
+<div class="pos-f-t " >
+<div class="collapse" id="navbarToggleExternalContent">
+<div class="bg-dark p-4 text-center">
+<h5 class="text-white h4">Lucas Henrique de Melo</h5>
+<span class="text-muted">Curso: Programação WEB - Engenharia da Computação<p>IFTM - Campus upt - Uberaba</p></span>
+</div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+</nav>
+</div>
+</footer>
+
+
+

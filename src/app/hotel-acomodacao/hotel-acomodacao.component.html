@@ -1,0 +1,142 @@
+
+    
+<div class="jumbotron text-center" style="margin-bottom: 0px">
+  <h1 class="display-4 "> <img src="https://image.flaticon.com/icons/png/512/110/110479.png" width="64" height="64">HOTEL SKYLINE</h1>
+  <p class="lead">O melhor e o maior hotel do mundo. Venha conhecer esse luxuoso lugar e único paraíso na terra. Veja o mundo do topo.</p>
+  <hr class="my-4">
+  <p>Reserve já um apartamento com nossos sistema online.</p>
+  <a routerLink="/reservar" class="btn btn-primary btn-lg" href="#" role="button" style="margin-bottom: 25px">Reservar agora</a>
+</div>
+
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey" >
+  <h2>Apartamentos</h2><br>
+  <h4>Todas as acomodações</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="../../assets/simples.jpg" alt="Simples" width="400" height="300">
+        <p><strong>Simples</strong></p>
+        <p>Para aventureiros e com bom gosto.</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="../../assets/casal.jpg" alt="Casal" width="400" height="300">
+        <p><strong>Casal</strong></p>
+        <p>Venha passar um tempo com seu par.</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="../../assets/premium.jpg" alt="Premium" width="400" height="300">
+        <p><strong>Premium</strong></p>
+        <p>O melhor quarto do mundo. 1000 estrelas.</p>
+      </div>
+    </div>
+  </div><br>
+    </div>
+    
+<div id="pricing" class="container-fluid" style="margin-bottom: 10px !important">
+  <div class="text-center">
+    <h2>Preços</h2>
+    <h4>Escolha a acomodação ideal para você.</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Simples</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>2</strong> Ventiladores</p>
+          <p><strong>1</strong> Cama solteiro</p>
+          <p><strong>32"</strong> TV</p>
+          <p><strong>1</strong> Freegobar</p>
+          <p><strong>Somente</strong> por</p>
+        </div>
+        <div class="panel-footer">
+          <h3>R$49</h3>
+          <h4>por dia</h4>
+          <button class="btn btn-lg">Alugar</button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Casal</h1>
+        </div>
+        <div class="panel-body">
+            <p><strong>1</strong> Ar Condionado</p>
+            <p><strong>1</strong> Cama Casal</p>
+            <p><strong>40"</strong> TV</p>
+            <p><strong>1</strong> Cozinha</p>
+            <p><strong>Somente</strong> por</p>
+          </div>
+          <div class="panel-footer">
+            <h3>R$159</h3>
+            <h4>por dia</h4>
+            <button class="btn btn-lg">Alugar</button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Premium</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>2</strong> Ar Condionado</p>
+          <p><strong>1</strong> King Size</p>
+          <p><strong>60"</strong> TV</p>
+          <p><strong>1</strong> Big-Cozinha</p>
+          <p><strong>Somente</strong> por</p>
+        </div>
+        <div class="panel-footer">
+          <h3>R$449</h3>
+          <h4>por dia</h4>
+          <button class="btn btn-lg">Alugar</button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
